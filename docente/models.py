@@ -40,6 +40,7 @@ class Docente(models.Model):
     teacher_type = models.ForeignKey('TipoDocente', verbose_name='Docente', on_delete = models.CASCADE)
     contract = models.ForeignKey('ContratoDocente', verbose_name='Tipo de Contrato', on_delete = models.CASCADE)
     work_category = models.ForeignKey('CategoriaDocente', verbose_name='Categoría', on_delete = models.CASCADE)
+    centro = models.ForeignKey('base.AcademicCenter', on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return '{0} {1}'.format(self.last_name, self.name)

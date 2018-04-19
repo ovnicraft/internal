@@ -12,12 +12,12 @@ class Room(models.Model):
 class Schedule(models.Model):
 
     DAYS = [
-        ('lunes', 'LUNES'),
-        ('martes', 'MARTES'),
-        ('miercoles', 'MIERCOLES'),
-        ('jueves', 'JUEVES'),
-        ('viernes', 'VIERNES'),
-        ('sabado', 'SABADO'),
+        ('1lunes', 'LUNES'),
+        ('2martes', 'MARTES'),
+        ('3miercoles', 'MIERCOLES'),
+        ('4jueves', 'JUEVES'),
+        ('5viernes', 'VIERNES'),
+        ('6sabado', 'SABADO'),
     ]
 
     asignatura = models.ForeignKey('asignatura.Materia', on_delete=models.PROTECT)
