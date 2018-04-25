@@ -46,6 +46,7 @@ class AcademicAnnouncement(models.Model):
 
 class AcademicCycle(models.Model):
 
+    name = models.CharField('Ciclo de Estudio', max_length=128, default='*')
     date_start = models.DateField(verbose_name='Fecha Inicio')
     date_end = models.DateField(verbose_name='Fecha Fin')
     annoncement = models.ForeignKey('AcademicAnnouncement', on_delete=models.PROTECT)
