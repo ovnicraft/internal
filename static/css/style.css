@@ -47,12 +47,12 @@
 }
 
 body {
-  padding: 0em;
-  font-family: Montserrat, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  color: #444;
-  background: #eee;
+	padding: 0 2em;
+	font-family: Montserrat, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	color: #666;
+	background: #eee;
 }
 
 h1 {
@@ -62,10 +62,10 @@ h1 {
 }
 
 .rwd-table {
-  background: #34495E;
-  color: #fff;
-  border-radius: .4em;
-  overflow: hidden;
+	background: #f8f8f8;
+	color: #716f6e;
+	border-radius: .4em;
+	overflow: hidden;
 }
 .rwd-table tr {
   border-color: #46637f;
@@ -79,14 +79,13 @@ h1 {
   }
 }
 .rwd-table th, .rwd-table td:before {
-  color: #dd5;
+	color: #535458;
 }
 
 
-a { 
-	color: #FFFFFF; 
-	text-decoration:none;
-	
+a {
+	color: #716f6e;
+	text-decoration: none;
 	}
 a:hover{
   color: red;
@@ -105,11 +104,14 @@ a:hover{
 
 
 .modal-contenido{
-  background-color:aqua;
-  width:800px;
-  padding: 10px 20px;
-  margin: 20% auto;
-  position: relative;
+	background-color: #FFF;
+	width: 800px;
+	padding: 10px 20px;
+	margin: 20% auto;
+	position: relative;
+	height : 700px;
+    overflow : auto;
+	
 }
 .modal{
   background-color: rgba(0,0,0,.8);
@@ -142,11 +144,13 @@ a:hover{
 
 
 .modal1-contenido{
-  background-color:aqua;
-  width:90%;
-  padding: 10px 20px;
-  margin: 20% auto;
-  position: relative;
+	background-color: #FFF;
+	width: 90%;
+	padding: 10px 20px;
+	margin: 20% auto;
+	position: relative;
+	height : 700px;
+    overflow : auto;
 }
 .modal1{
   background-color: rgba(0,0,0,.8);
@@ -166,5 +170,3 @@ a:hover{
   opacity:1;
   pointer-events:auto;
 }
-
-
