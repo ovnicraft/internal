@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'docente',
     'asignatura',
     'investigacion_tutoria',
-    'schedule'
+    'schedule',
+    'import_export',
 ]
 
 MIDDLEWARE = [
