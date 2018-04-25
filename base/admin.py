@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import AcademicAnnouncement, AcademicCenter, AcademicProgram
+from .models import AcademicAnnouncement, AcademicCenter, AcademicProgram, AcademicCycle
 from import_export.admin import ImportExportModelAdmin
 
 
@@ -19,9 +19,11 @@ class AcademicCenterAdminIE(ImportExportModelAdmin):
 class AcademicProgramAdminIE(ImportExportModelAdmin):
     pass
 
+
+admin.site.register(AcademicCycle)
+
 '''
 admin.site.register(AcademicAnnouncement)
 admin.site.register(AcademicCenter)
 admin.site.register(AcademicProgram)
 '''
-

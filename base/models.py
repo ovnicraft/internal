@@ -44,6 +44,20 @@ class AcademicAnnouncement(models.Model):
         verbose_name_plural = 'Convocatorias'
 
 
+class AcademicCycle(models.Model):
+
+    date_start = models.DateField(verbose_name='Fecha Inicio')
+    date_end = models.DateField(verbose_name='Fecha Fin')
+    annoncement = models.ForeignKey('AcademicAnnouncement', on_delete=models.PROTECT)
+
+    def __str__(self):
+        return '[{0} - {1}] {2}'.format(self.date_start, self.date_end, self.annoncement)
+
+    class Meta:
+        verbose_name = 'Ciclo de Estudio'
+        verbose_name_plural = 'Ciclos de Estudio'
+
+
 class AcademicProgram(models.Model):
 
     name = models.CharField('Programa', max_length=128)

@@ -25,4 +25,4 @@ class Materia(models.Model):
     teacher = models.ForeignKey(Docente, on_delete = models.CASCADE, null=True)
 
     def __str__(self):
-        return self.name
+        return '{0}'.format(self.name)

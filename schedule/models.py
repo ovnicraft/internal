@@ -26,13 +26,17 @@ class Schedule(models.Model):
     day = models.CharField('Día', choices=DAYS, max_length=32, default='lunes')
     hour_start = models.TimeField(verbose_name='Hora Inicio')
     hour_end = models.TimeField(verbose_name='Hora Salida')
+    date_start = models.DateField(verbose_name='Fecha Inicio', null=True)
+    date_end = models.DateField(verbose_name='Fecha Fin', null=True)
     annoncement = models.ForeignKey('base.AcademicAnnouncement', on_delete=models.SET_NULL, null=True)
     program = models.ForeignKey('base.AcademicProgram', on_delete=models.SET_NULL, null=True)
+    posted = models.BooleanField('Publicado ?', default=True)
 
     def __str__(self):
-        return '{0} {1}'.format(
+        return '{2}: {0} [{1}]'.format(
             self.asignatura,
-            self.annoncement
+            self.annoncement,
+            self.program
         )
 
     class Meta:

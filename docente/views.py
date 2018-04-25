@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from itertools import groupby
+from operator import itemgetter
 
 from django.shortcuts import render
 from .models import Docente
@@ -34,9 +35,12 @@ def complete(dias):
 def docente_detail(request, pk):
     grouped_hours = []
     docente = Docente.objects.get(pk=pk)
-    horario = Schedule.objects.filter(teacher=docente).order_by('hour_start')
+    horario = Schedule.objects.filter(teacher=docente, posted=True).order_by('hour_start')
+    grouper = itemgetter('hour_start', 'hour_end')
+    import pdb
     for hour, v in groupby(horario, lambda x: x.hour_start):
         lista = list(v)
+        hend = lista[0].hour_end
         lista.reverse()
-        grouped_hours.append({'materias': complete(lista), 'hora': hour})
+        grouped_hours.append({'materias': complete(lista), 'hora': hour, 'hend': hend})
     return render(request, 'docente/index2.html', {'horarios': grouped_hours, 'docente': docente})

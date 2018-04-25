@@ -41,7 +41,7 @@
                             </tr>
                             {%for horario in horarios %}
                             <tr>
-                              <td data-th="&nbsp;">{{ horario.hora }}</td>
+                              <td data-th="&nbsp;">{{ horario.hora }} - {{ horario.hend}}</td>
                               {% for dia in horario.materias %}
                               <td data-th="Lunes">
                                 <a href="#miModal1"> {{ dia.asignatura  }}</a>
